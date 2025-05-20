@@ -13,8 +13,17 @@ const ProfiloCard = ({ cardId }) => {
     setEmail("");
   };
 
+    const backgroundColors = {
+    1: "bg-red-500",
+    2: "bg-green-400",
+    3: "bg-yellow-300",
+    4: "bg-sky-300",
+  };
+
+  const cardBg = backgroundColors[cardId] || "bg-white";
+
   return (
-    <div className="bg-white shadow-md rounded-2xl p-6 w-full max-w-sm">
+    <div className={`${cardBg} shadow-md rounded-2xl p-6 w-full max-w-sm text-center`}>
       <h2 className="text-xl font-bold mb-4">Giocatore {cardId}</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -39,9 +48,9 @@ const ProfiloCard = ({ cardId }) => {
         </div>
         <button
           type="submit"
-          className="bg-yellow-300 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          className="bg-gray-50 text-black px-4 py-2 rounded-md mx-auto block hover:scale-110 transition-transform duration-200"
         >
-          Registrati
+          INIZIA!🚀
         </button>
       </form>
     </div>
