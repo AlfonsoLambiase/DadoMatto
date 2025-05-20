@@ -9,12 +9,13 @@ import SocialMedia from "./Pages/SocialMedia";
 import Profilo from "./Pages/Profilo";
 import Regole from "./Pages/Regole";
 import Gioco from "./Pages/Gioco";
+import Mp3 from "./Components/Mp3";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-
+        <Mp3/>
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />

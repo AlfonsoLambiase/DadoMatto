@@ -1,31 +1,37 @@
 import { Link } from "react-router-dom";
+import { HiOutlineMail } from "react-icons/hi";
+import { FaShareAlt } from "react-icons/fa";
+import { BsPeople } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-center w-full gap-6 border-t bg-green-300 p-4">
+    <footer className="w-full flex justify-center gap-38 items-center bg-cyan-900 text-white p-4 mt-20 text-2xl">
       <ul className="flex gap-10">
         <li>
           <Link
             to="/Contatti"
-            className="hover:text-white cursor-pointer transition duration-100"
+           className="flex flex-col items-center hover:text-cyan-300"
           >
-            Contatti
+<HiOutlineMail />
+            <span className="text-sm mt-1">Contatti</span> 
           </Link>
         </li>
-        <li>
+             <li>
           <Link
-            to="/SocialMedia"
-            className="hover:text-white cursor-pointer transition duration-100"
+            to="/Contatti"
+           className="flex flex-col items-center hover:text-cyan-300"
           >
-            Social Media
+<FaShareAlt  />
+            <span className="text-sm mt-1">Condividi</span> 
           </Link>
         </li>
-        <li>
+             <li>
           <Link
-            to="/FAQ"
-            className="hover:text-white cursor-pointer transition duration-100"
+            to="/Contatti"
+           className="flex flex-col items-center hover:text-cyan-300"
           >
-            FAQ
+<BsPeople />
+            <span className="text-sm mt-1">Chi siamo</span> 
           </Link>
         </li>
       </ul>

@@ -41,21 +41,21 @@ const Gioco = () => {
   const getCardBgColor = () => {
     switch (tipoCard) {
       case "domande":
-        return "bg-blue-500 text-white";
+        return "bg-sky-600 text-white";
       case "eventi":
-        return "bg-yellow-400 text-black";
+        return "bg-yellow-500 text-white";
       case "obblighi":
-        return "bg-red-500 text-white";
+        return "bg-red-600 text-white";
       default:
         return "bg-white text-black";
     }
   };
 
   return (
-    <div className="flex items-center flex-col min-h-screen">
-      <h1 className="mt-16 text-4xl font-bold">PRONTO A GIOCARE?</h1>
+    <div className=" max-w-xl mx-auto p-6 bg-cyan-900 rounded-2xl shadow-md border border-gray-200 text-center text-white">
+      <h1 className=" text-4xl font-bold">PRONTO A GIOCARE?</h1>
 
-      <div className="relative w-[300px] h-[300px] my-12">
+      <div className="relative w-[300px] h-[300px] my-12 mx-auto">
         <Lottie
           lottieRef={lottieRef}
           animationData={dado}
@@ -85,9 +85,9 @@ const Gioco = () => {
 
       <button
         onClick={giraDado}
-        className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition"
+        className="bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-cyan-500 transition"
       >
-        Tira il Dado!
+        TIRA IL DADO!
       </button>
     </div>
   );
