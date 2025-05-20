@@ -1,11 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
-
+import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Contatti from "./Pages/Contatti";
-import FAQ from "./Pages/FAQ";
-import SocialMedia from "./Pages/SocialMedia";
+import ChiSiamo from "./Pages/ChiSiamo";
+import Condividi from "./Pages/Condividi";
 import Profilo from "./Pages/Profilo";
 import Regole from "./Pages/Regole";
 import Gioco from "./Pages/Gioco";
@@ -20,8 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Contatti" element={<Contatti />} />
-          <Route path="/FAQ" element={<FAQ />} />
-          <Route path="/SocialMedia" element={<SocialMedia />} />
+          <Route path="/ChiSiamo" element={<ChiSiamo />} />
+          <Route path="/Condividi" element={<Condividi />} />
           <Route path="/Profilo" element={<Profilo />} />
           <Route path="/Regole" element={<Regole />} />
           <Route path="/Gioco" element={<Gioco />} />
