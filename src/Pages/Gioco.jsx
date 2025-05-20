@@ -73,7 +73,7 @@ const Gioco = () => {
             className={`absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-lg pointer-events-none`}
           >
             <div
-              className={`p-15 rounded-xl shadow-lg text-center text-2xl transform transition-transform duration-300 w-80 h-72 ${getCardBgColor()} ${
+              className={`p-15 rounded-xl shadow-lg text-center text-2xl transform transition-transform duration-300   ${getCardBgColor()} ${
                 animateCard ? "scale-100" : "scale-0"
               }`}
             >
