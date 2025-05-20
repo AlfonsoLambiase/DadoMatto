@@ -70,13 +70,11 @@ const Gioco = () => {
 
         {showCard && (
           <div
-            className={`absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-lg pointer-events-none`}
-          >
+            className={`absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-lg pointer-events-none`}>
             <div
               className={`p-15 rounded-xl shadow-lg text-center text-2xl transform transition-transform duration-300   ${getCardBgColor()} ${
                 animateCard ? "scale-100" : "scale-0"
-              }`}
-            >
+              }`}>
               <Card testo={cardData} tipo={tipoCard} />
             </div>
           </div>
@@ -85,8 +83,7 @@ const Gioco = () => {
 
       <button
         onClick={giraDado}
-        className="bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-cyan-500 transition"
-      >
+        className="bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-cyan-500 transition">
         TIRA IL DADO!
       </button>
     </div>
