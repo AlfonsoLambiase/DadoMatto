@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import dado from "../animation/dado.json";
 
-const Home = () => {
 
+const Gioco = () => {
   return (
-    <>
+        <>
       <div className="max-w-xl mx-auto p-6 bg-cyan-900 rounded-2xl shadow-md border border-gray-200 text-center text-white" >
         <h1 className="text-2xl font-bold ">DADO MATTO</h1>
         <br/>
@@ -28,13 +29,18 @@ const Home = () => {
         </p>
          <br/>
 
-<Link to="/Gioco" className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition">
-    GIOCA
-</Link>
+<button className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition">
+    Tira il Dado!
+</button>
 
       </div>
+    <div className="flex justify-center items-center h-screen m-0">
+      <Lottie animationData={dado} loop={false}  />
+    </div>
     </>
   );
 };
 
-export default Home;
+export default Gioco;
+
+
