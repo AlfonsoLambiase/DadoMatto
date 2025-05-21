@@ -28,8 +28,8 @@ const Home = () => {
         </p>
          <br/>
 
-<Link to="/Gioco" className="bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-cyan-500 transition">
-    GIOCA
+<Link to="/Profilo" className="bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-cyan-500 transition">
+    REGISTRATI CON I TUOI AMICI!
 </Link>
 
       </div>
