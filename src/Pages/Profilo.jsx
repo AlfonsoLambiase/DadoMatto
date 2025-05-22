@@ -29,10 +29,10 @@ const Profilo = () => {
         </div>
       </div>
 
-      <div className="flex justify-end w-full pr-16 px-8 mt-4">
+      <div className="flex justify-center w-full pr-16 px-8 mt-4 ml-4">
         <button
           onClick={handleInizia}
-          className="bg-cyan-600 text-white hover:bg-cyan-500 px-8 py-4 rounded-md block"
+          className="bg-cyan-900 text-white hover:scale-110 transition-transform  px-4 py-4 rounded-md block"
         >
           INIZIA! 🚀
         </button>

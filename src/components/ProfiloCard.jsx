@@ -17,7 +17,7 @@ const ProfiloCard = ({ cardId, personaggioImg }) => {
     1: "bg-red-500",
     2: "bg-green-400",
     3: "bg-yellow-300",
-    4: "bg-sky-300",
+    4: "bg-sky-500",
   };
 
   const cardBg = backgroundColors[cardId] || "bg-white";
