@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const ProfiloCard = ({ cardId, personaggioImg }) => {
   const [nickname, setNickname] = useState("");
-  const [email, setEmail] = useState("");
+  const [giocatore, setGiocatore] = useState(`Giocatore ${cardId}`)
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const playerData = { nickname, email };
+    const playerData = { nickname };
     sessionStorage.setItem(`player-${cardId}`, JSON.stringify(playerData));
     setNickname("");
-    setEmail("");
+    setGiocatore(nickname)
   };
 
   const backgroundColors = {
@@ -30,7 +31,7 @@ const ProfiloCard = ({ cardId, personaggioImg }) => {
           className="w-32 h-32 mx-auto mb-4 object-contain"
         />
       )}
-      <h2 className="text-xl font-bold mb-4">Giocatore {cardId}</h2>
+      <h2 className="text-xl font-bold mb-4">{giocatore}</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-bold mb-1 ">Nickname</label>
