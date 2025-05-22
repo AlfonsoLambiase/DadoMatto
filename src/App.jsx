@@ -12,7 +12,9 @@ import Mp3 from "./Components/Mp3";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div
+      className="flex flex-col min-h-screen bg-[url('/SfondoDadoMatto2.jpg')] bg-cover bg-center bg-fixed"
+    >
       <Header />
         <Mp3/>
       <main className="flex-grow">
