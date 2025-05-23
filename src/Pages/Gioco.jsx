@@ -46,7 +46,7 @@ const Gioco = () => {
     setShowCard(false);
     setAnimateCard(false);
     setMostraTurno(true);
-    setCountdown(3); // Avvia il conto alla rovescia
+    setCountdown(3);
   };
 
   useEffect(() => {
@@ -99,60 +99,64 @@ const Gioco = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-cyan-900 rounded-2xl shadow-md border border-gray-200 text-center text-white">
-      <h1 className="text-4xl font-bold">PRONTO A GIOCARE?</h1>
+    <div className="px-4 sm:px-6">
+      <div className="max-w-xl mx-auto py-6 bg-cyan-900 rounded-2xl shadow-md border border-gray-200 text-center text-white mt-6">
+        <h1 className="text-3xl font-bold mb-4">PRONTO A GIOCARE?</h1>
 
-      {players.length > 0 && mostraTurno && (
-        <div className="flex items-center justify-center gap-4 mt-4 mb-4">
-          <img
-            src={immagini[players[turno].id]}
-            alt="personaggio"
-            className="w-12 h-12 rounded-full"
-          />
-          <p className="text-xl font-semibold">Turno di {players[turno].nickname}</p>
-        </div>
-      )}
-
-      {countdown !== null && (
-        <p className="text-5xl font-bold text-white mt-4">
-          {countdown === 0 ? "Via!" : countdown}
-        </p>
-      )}
-
-      <div className="relative w-[300px] h-[300px] my-12 mx-auto">
-        <Lottie
-          lottieRef={lottieRef}
-          animationData={dado}
-          loop={false}
-          autoplay={false}
-          style={{ width: "300px", height: "300px" }}
-          onComplete={() => {
-            scegliCardRandom();
-            setShowCard(true);
-            setTurno((prev) => (prev + 1) % players.length);
-          }}
-        />
-
-        {showCard && (
-          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-lg pointer-events-none">
-            <div
-              className={`p-15 rounded-xl shadow-lg text-center text-2xl transform transition-transform duration-300 ${getCardBgColor()} ${
-                animateCard ? "scale-100" : "scale-0"
-              }`}
-            >
-              <Card testo={cardData} tipo={tipoCard} />
-            </div>
+        {players.length > 0 && mostraTurno && (
+          <div className="flex items-center justify-center gap-4 mt-4 mb-4">
+            <img
+              src={immagini[players[turno].id]}
+              alt="personaggio"
+              className="w-12 h-12 rounded-full"
+            />
+            <p className="text-lg sm:text-xl font-semibold">
+              Turno di {players[turno].nickname}
+            </p>
           </div>
         )}
-      </div>
 
-      <button
-        onClick={giraDado}
-        className="bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-cyan-500 transition"
-        disabled={countdown !== null}
-      >
-        TIRA IL DADO!
-      </button>
+        {countdown !== null && (
+          <p className="text-5xl font-bold text-white mt-4">
+            {countdown === 0 ? "Via!" : countdown}
+          </p>
+        )}
+
+        <div className="relative w-[260px] sm:w-[300px] h-[260px] sm:h-[300px] my-10 mx-auto">
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={dado}
+            loop={false}
+            autoplay={false}
+            style={{ width: "100%", height: "100%" }}
+            onComplete={() => {
+              scegliCardRandom();
+              setShowCard(true);
+              setTurno((prev) => (prev + 1) % players.length);
+            }}
+          />
+
+          {showCard && (
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-lg pointer-events-none">
+              <div
+                className={`p-6 sm:p-8 rounded-xl shadow-lg text-center text-lg sm:text-2xl transform transition-transform duration-300 ${getCardBgColor()} ${
+                  animateCard ? "scale-100" : "scale-0"
+                }`}
+              >
+                <Card testo={cardData} tipo={tipoCard} />
+              </div>
+            </div>
+          )}
+        </div>
+
+        <button
+          onClick={giraDado}
+          className="bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-cyan-500 transition disabled:opacity-50"
+          disabled={countdown !== null}
+        >
+          TIRA IL DADO!
+        </button>
+      </div>
     </div>
   );
 };

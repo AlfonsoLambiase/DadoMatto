@@ -5,32 +5,34 @@ import { BsPeople } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="w-full flex justify-center gap-38 items-center bg-cyan-900 text-white p-4 mt-20 text-2xl">
-      <ul className="flex gap-35">
+    <footer className="w-full bg-cyan-900 text-white p-4 mt-20 text-xl">
+      <ul className="flex justify-center items-center gap-10 flex-wrap text-center">
         <li>
           <Link
             to="/Contatti"
             className="flex flex-col items-center hover:text-cyan-300"
           >
-            <HiOutlineMail />
+            <HiOutlineMail className="text-2xl" />
             <span className="text-sm mt-1">Contatti</span>
           </Link>
         </li>
 
-        <Link
-          to="/Condividi"
-          className="flex flex-col items-center hover:text-cyan-300"
-        >
-          <FaShareAlt />
-          <span className="text-sm mt-1">Condividi</span>
-        </Link>
+        <li>
+          <Link
+            to="/Condividi"
+            className="flex flex-col items-center hover:text-cyan-300"
+          >
+            <FaShareAlt className="text-2xl" />
+            <span className="text-sm mt-1">Condividi</span>
+          </Link>
+        </li>
 
         <li>
           <Link
             to="/ChiSiamo"
             className="flex flex-col items-center hover:text-cyan-300"
           >
-            <BsPeople />
+            <BsPeople className="text-2xl" />
             <span className="text-sm mt-1">Chi siamo</span>
           </Link>
         </li>
@@ -38,4 +40,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;

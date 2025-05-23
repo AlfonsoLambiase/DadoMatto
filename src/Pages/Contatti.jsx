@@ -2,6 +2,10 @@
 const Contatti = () => {
  
   return (
+    <div className="px-4 sm:px-6">
+
+
+   
     <div className="max-w-3xl mx-auto p-6 bg-cyan-900  rounded-2xl shadow-md border border-gray-200">
       <h1 className="text-3xl font-bold mb-6 text-center text-white">Contatti</h1>
 
@@ -17,7 +21,7 @@ const Contatti = () => {
         <li>
           📧 <strong>Email:</strong>{" "}
           <a href="#" className="text-white hover:underline">
-           Lambiase1199@gmail.com
+           cristianrinaldi0@gmail.com
           </a> 
         </li>
         <li>🕒 <strong>Orari di supporto:</strong> Lun–Ven, 9:00–18:00</li>
@@ -26,6 +30,7 @@ const Contatti = () => {
         </li>
       </ul>
     </div>
+     </div>
   );
 };
 
