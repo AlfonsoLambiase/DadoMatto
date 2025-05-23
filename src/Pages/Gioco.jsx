@@ -25,6 +25,7 @@ const Gioco = () => {
   const [cardData, setCardData] = useState(null);
   const [turno, setTurno] = useState(0);
   const [mostraTurno, setMostraTurno] = useState(false);
+  const [countdown, setCountdown] = useState(null);
 
   const players = useMemo(() => {
     const p = [];
@@ -44,15 +45,26 @@ const Gioco = () => {
   const giraDado = () => {
     setShowCard(false);
     setAnimateCard(false);
-    setMostraTurno(true); 
+    setMostraTurno(true);
+    setCountdown(3); // Avvia il conto alla rovescia
+  };
 
-    
-    setTimeout(() => {
+  useEffect(() => {
+    if (countdown === null) return;
+    if (countdown === 0) {
+      setCountdown(null);
       lottieRef.current?.stop();
       lottieRef.current?.play();
-      setMostraTurno(false); 
-    }, 2000);
-  };
+      setMostraTurno(false);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setCountdown((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [countdown]);
 
   useEffect(() => {
     if (showCard) {
@@ -101,6 +113,12 @@ const Gioco = () => {
         </div>
       )}
 
+      {countdown !== null && (
+        <p className="text-5xl font-bold text-white mt-4">
+          {countdown === 0 ? "Via!" : countdown}
+        </p>
+      )}
+
       <div className="relative w-[300px] h-[300px] my-12 mx-auto">
         <Lottie
           lottieRef={lottieRef}
@@ -111,7 +129,7 @@ const Gioco = () => {
           onComplete={() => {
             scegliCardRandom();
             setShowCard(true);
-            setTurno((prev) => (prev + 1) % players.length); 
+            setTurno((prev) => (prev + 1) % players.length);
           }}
         />
 
@@ -131,6 +149,7 @@ const Gioco = () => {
       <button
         onClick={giraDado}
         className="bg-cyan-600 text-white py-2 px-4 rounded-lg hover:bg-cyan-500 transition"
+        disabled={countdown !== null}
       >
         TIRA IL DADO!
       </button>

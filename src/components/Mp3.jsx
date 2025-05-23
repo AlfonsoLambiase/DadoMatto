@@ -19,7 +19,7 @@ const Mp3 = () => {
     <div
       onClick={handlePlayPause}
       className="cursor-pointer w-20 h-20 bg-cyan-900 text-white rounded-full shadow-lg m-5 flex items-center justify-center
-             hover:bg-cyan-500 active:scale-95 transition duration-200 ease-in-out "
+             hover:scale-110 active:scale-95 transition duration-200 ease-in-out "
     >
       <button>
         {isPlaying ? <Mute /> : <Play />} {/* Testo play o pause */}
