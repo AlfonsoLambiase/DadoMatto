@@ -6,7 +6,7 @@ import { BsPeople } from "react-icons/bs";
 const Footer = () => {
   return (
     <footer className="w-full bg-cyan-900 text-white p-4 mt-20 text-xl">
-      <ul className="flex justify-center items-center gap-10 flex-wrap text-center">
+      <ul className="flex justify-center items-center gap-22  text-center">
         <li>
           <Link
             to="/Contatti"

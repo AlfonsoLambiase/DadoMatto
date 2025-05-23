@@ -21,7 +21,7 @@ const Profilo = () => {
 
   return (
     <>
-      <div className="min-h-screen p-8 flex justify-center items-center">
+      <div className="min-h-screen p-8 flex justify-center items-center overflow-x-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {[1, 2, 3, 4].map((id) => (
             <ProfiloCard key={id} cardId={id} personaggioImg={immagini[id]} />
@@ -29,10 +29,10 @@ const Profilo = () => {
         </div>
       </div>
 
-      <div className="flex justify-center w-full pr-16 px-8 mt-4 ml-4">
+      <div className="flex justify-center w-full px-8 mt-4">
         <button
           onClick={handleInizia}
-          className="bg-cyan-900 text-white hover:scale-110 transition-transform  px-4 py-4 rounded-md block"
+          className="bg-cyan-900 text-white hover:scale-110 transition-transform px-4 py-4 rounded-md block"
         >
           INIZIA! 🚀
         </button>

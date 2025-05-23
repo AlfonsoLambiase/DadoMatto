@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="px-4 sm:px-6">
-      <div className="max-w-xl mx-auto py-6 px-4 bg-cyan-900 rounded-2xl shadow-md border border-gray-200 text-center text-white">
+      <div className=" max-w-xl mx-auto py-6 px-4 bg-cyan-900 rounded-2xl shadow-md border border-gray-200 text-center text-white">
         <h1 className="text-2xl font-bold">DADO MATTO</h1>
         <br />
         <p>
