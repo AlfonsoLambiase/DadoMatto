@@ -21,7 +21,7 @@ const Contatti = () => {
         <li>
           📧 <strong>Email:</strong>{" "}
           <a href="#" className="text-white hover:underline">
-           cristianrinaldi0@gmail.com
+          Lambiase1199@gmail.com
           </a> 
         </li>
         <li>🕒 <strong>Orari di supporto:</strong> Lun–Ven, 9:00–18:00</li>
